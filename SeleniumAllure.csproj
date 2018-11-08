@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.1" />
+    <PackageReference Include="nunit" Version="3.10.1" />
+    <PackageReference Include="NUnit.Allure" Version="1.0.4" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.2" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+    <None Update="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="allureConfig.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="./drivers/chromedriver.exe" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="./drivers/geckodriver.exe" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="./drivers/IEDriverServer.exe" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="./drivers/MicrosoftWebDriver.exe" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
