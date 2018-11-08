@@ -8,7 +8,7 @@ This is a quick little setup for Nunit driving Selenium, with report generation 
 
 * Ensure that [Allure commandline is installed](https://docs.qameta.io/allure/#_installing_a_commandline).
 * Ensure that [Python is installed](https://www.python.org/downloads/).
-* Ensure that the web drivers in ./drivers are appropriate for your system.
+* Ensure that the web drivers in `./drivers` are appropriate for your system.
 
 
 
