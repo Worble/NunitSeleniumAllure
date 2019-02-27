@@ -1,21 +1,20 @@
-using System;
-using System.IO;
-using Allure.Commons;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
 using SeleniumAllure.Helpers;
 using Tests.Abstract;
 
 namespace Tests.GoogleTests
 {
     [AllureNUnit]
-    [AllureSuite("GoogleTests")]
-    [TestFixture]
+    [TestFixtureSource(typeof(TestFixtureSource), "Drivers")]
+    [AllureSubSuite("Google Tests")]
     public class GoogleTest : TestBase
     {
+        public GoogleTest(Driver driverType) : base(driverType)
+        {
+        }
 
         [Test]
         public void CanNavigateToGoogle()
@@ -27,7 +26,7 @@ namespace Tests.GoogleTests
         public void CanNavigateToGoogle_AndSearchForTest()
         {
             CanNavigateToGoogle();
-            var input = driver.FindElement(By.XPath(@"//input[@title='Search']"));
+            var input = driver.FindElement(By.XPath("//input[@title='Search']"));
             input.SendKeys("Test");
             input.Submit();
         }
@@ -36,7 +35,7 @@ namespace Tests.GoogleTests
         public void CanNavigateToGoogle_AndSearchForTest_AndClickOnSpeedTestLink()
         {
             CanNavigateToGoogle_AndSearchForTest();
-            var link = driver.FindElement(By.XPath(@"//a[@href='http://www.speedtest.net/']"));
+            var link = driver.FindElement(By.XPath("//a[@href='http://www.speedtest.net/']"));
             link.Click();
         }
     }
