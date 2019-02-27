@@ -51,7 +51,7 @@ namespace Tests.Abstract
                     {
                         PageLoadStrategy = PageLoadStrategy.Eager
                     };
-                    driver = new EdgeDriver(driverDirectory, edgeOptions);
+                    driver = new EdgeDriver(edgeOptions);
                     driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
                     driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
                     break;
