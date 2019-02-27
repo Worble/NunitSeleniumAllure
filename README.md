@@ -6,15 +6,19 @@ This is a quick little setup for Nunit driving Selenium, with report generation 
 
 # Setup
 
+* Ensure that [.NET Core is installed](https://dotnet.microsoft.com/download).
 * Ensure that [Allure commandline is installed](https://docs.qameta.io/allure/#_installing_a_commandline).
 * Ensure that [Python is installed](https://www.python.org/downloads/).
+	* This is no longer particularly necessary - all python does is run the tests and load allure, which can be done by hand if wanted.
 * Ensure that the web drivers in `./drivers` are appropriate for your system.
 
 
 
 # Running Tests
 
-* Run `./runtests.py`. This will run all tests in Chrome, Firefox, Edge and Internet Explorer, and serve Allure reports for each individually.
+* From project root, run `./runtests.py`. This will run all tests in Chrome, Firefox, Edge and Internet Explorer and serve the report.
+
+* Alternatively, from project root run `dotnet test`, and when the tests are finished, then run `allure serve ./bin/Debug/netcoreapp2.0/allure-results` to serve the report.
 
 
 
@@ -26,4 +30,4 @@ This is a quick little setup for Nunit driving Selenium, with report generation 
 
 # ToDo
 
-* Starting 4 webservers to display reports is just awkward, look into finding a way to bundle them into one report or similar.
+~~* Starting 4 webservers to display reports is just awkward, look into finding a way to bundle them into one report or similar.~~
