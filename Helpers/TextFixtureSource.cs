@@ -1,6 +1,6 @@
 ﻿namespace SeleniumAllure.Helpers
 {
-    public static class TestFixtureSource
+    public static class TestFixtureDrivers
     {
         private static readonly object[] Drivers = {
             new object[] { Driver.Chrome },

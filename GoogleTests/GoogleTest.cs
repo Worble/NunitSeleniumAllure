@@ -8,7 +8,7 @@ using Tests.Abstract;
 namespace Tests.GoogleTests
 {
     [AllureNUnit]
-    [TestFixtureSource(typeof(TestFixtureSource), "Drivers")]
+    [TestFixtureSource(typeof(TestFixtureDrivers), "Drivers")]
     [AllureSubSuite("Google Tests")]
     public class GoogleTest : TestBase
     {
