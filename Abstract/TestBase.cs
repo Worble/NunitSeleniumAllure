@@ -75,8 +75,7 @@ namespace Tests.Abstract
                 var screenshot = ((ITakesScreenshot)driver).GetScreenshot().AsByteArray;
                 AllureLifecycle.Instance.AddAttachment("ScreenShot", "image/png", screenshot, ".png");
             }
-            driver.Close();
-            driver.Dispose();
+            driver?.Quit();
         }
     }
 }

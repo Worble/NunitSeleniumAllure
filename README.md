@@ -12,6 +12,11 @@ This is a quick little setup for Nunit driving Selenium, with report generation 
 	* This is no longer particularly necessary - all python does is run the tests and load allure, which can be done by hand if wanted.
 * Ensure that the web drivers in `./drivers` are appropriate for your system.
 
+Specflow Specific:
+
+* Install the specflow extension in Visual Studio.
+* See https://specflow.org/2018/specflow-3-public-preview-now-available/ for setting up .NET Core for Specflow
+
 
 
 # Running Tests
