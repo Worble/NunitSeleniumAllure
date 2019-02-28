@@ -24,7 +24,7 @@ This is a quick little setup for Nunit driving Selenium, with report generation 
 
 # Known Issues
 
-* Currently uses the Windows `start` command to start the Allure report, this won't work on other platforms.
+~~* Currently uses the Windows `start` command to start the Allure report, this won't work on other platforms.~~
 
 
 
