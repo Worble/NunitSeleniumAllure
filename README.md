@@ -10,7 +10,8 @@ This is a quick little setup for Nunit driving Selenium, with report generation 
 * Ensure that [Allure commandline is installed](https://docs.qameta.io/allure/#_installing_a_commandline).
 * Ensure that [Python is installed](https://www.python.org/downloads/).
 	* This is no longer particularly necessary - all python does is run the tests and load allure, which can be done by hand if wanted.
-* Ensure that the web drivers in `./drivers` are appropriate for your system.
+* Ensure that the web drivers in `./drivers` are appropriate for your system (they'll probably need updating anyway).
+* The drivers the tests run against are defined in /Helpers/TextFixtureDrivers, comment ones out you won't be using, or add them here
 
 Specflow Specific:
 
@@ -29,7 +30,7 @@ Specflow Specific:
 
 # Known Issues
 
-* Currently uses the Windows `start` command to start the Allure report, this won't work on other platforms.
+~~* Currently uses the Windows `start` command to start the Allure report, this won't work on other platforms.~~
 
 
 
