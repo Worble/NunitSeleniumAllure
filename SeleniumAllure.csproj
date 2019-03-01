@@ -14,7 +14,6 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
     <PackageReference Include="SpecFlow" Version="3.0.169-beta" />
-    <PackageReference Include="SpecFlow.Allure" Version="2.4.2.4" />
     <PackageReference Include="SpecFlow.NUnit" Version="3.0.169-beta" />
     <PackageReference Include="SpecFlow.NUnit.Runners" Version="3.0.169-beta" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.0.169-beta" />

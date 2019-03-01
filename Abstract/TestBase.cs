@@ -12,13 +12,13 @@ using System.IO;
 
 namespace Tests.Abstract
 {
+    [TestFixtureSource(typeof(TestFixtureDrivers), "Drivers")]
     public class TestBase
     {
-        private readonly string _currentDirectory = TestContext.CurrentContext.TestDirectory;
         public IWebDriver driver;
-        public Driver driverType;
+        public DriverEnum driverType;
 
-        public TestBase(Driver driverType)
+        public TestBase(DriverEnum driverType)
         {
             this.driverType = driverType;
         }
@@ -26,43 +26,28 @@ namespace Tests.Abstract
         [SetUp]
         public void Setup()
         {
-            InitializeDriver(driverType);
+            driver = Driver.SetupDriver(driverType);
             driver.Manage().Window.Maximize();
         }
 
-        private void InitializeDriver(Driver driverType)
+        private void SetupAllureLavel()
         {
-            string driverDirectory = Path.Combine(_currentDirectory, "drivers");
             switch (driverType)
             {
-                case Driver.Firefox:
+                case DriverEnum.Firefox:
                     AllureLifecycle.Instance.UpdateTestCase(e => e.labels.Add(Label.Suite("Firefox")));
-                    driver = new FirefoxDriver(driverDirectory);
                     break;
 
-                case Driver.Chrome:
+                case DriverEnum.Chrome:
                     AllureLifecycle.Instance.UpdateTestCase(e => e.labels.Add(Label.Suite("Chrome")));
-                    driver = new ChromeDriver(driverDirectory);
                     break;
 
-                case Driver.Edge:
+                case DriverEnum.Edge:
                     AllureLifecycle.Instance.UpdateTestCase(e => e.labels.Add(Label.Suite("Microsoft Edge")));
-                    var edgeOptions = new EdgeOptions
-                    {
-                        PageLoadStrategy = PageLoadStrategy.Eager
-                    };
-                    driver = new EdgeDriver(edgeOptions);
-                    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-                    driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
                     break;
 
-                case Driver.InternetExplorer:
+                case DriverEnum.InternetExplorer:
                     AllureLifecycle.Instance.UpdateTestCase(e => e.labels.Add(Label.Suite("Internet Explorer")));
-                    var ieOptions = new InternetExplorerOptions
-                    {
-                        EnsureCleanSession = true
-                    };
-                    driver = new InternetExplorerDriver(driverDirectory, ieOptions);
                     break;
             }
         }

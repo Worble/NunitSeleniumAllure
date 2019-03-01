@@ -1,24 +1,14 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using SeleniumAllure.Abstract;
 using SeleniumAllure.Helpers;
+using System;
 using TechTalk.SpecFlow;
-using Tests.Abstract;
 
-namespace SeleniumAllure.GoogleTests
+namespace SeleniumAllure
 {
-    [TestFixtureSource(typeof(TestFixtureDrivers), "Drivers")]
     [Binding]
-    public class GoogleFeatureSteps : TestBase
+    public class GoogleFeatureSteps : SpecflowTestBase
     {
-        public GoogleFeatureSteps(Driver driverType) : base(driverType)
-        {
-        }
-
-        [Given(@"I have opened by browser")]
-        public void GivenIHaveOpenedByBrowser()
-        {
-        }
-
         [Given(@"I have navigated to Google")]
         public void GivenIHaveNavigatedToGoogle()
         {
@@ -32,11 +22,11 @@ namespace SeleniumAllure.GoogleTests
             input.SendKeys(searchTerm);
         }
 
-        [When(@"I click the ""(.*)"" button")]
-        public void WhenIClickTheButton(string buttonContent)
+        [When(@"I submit the form")]
+        public void WhenIClickTheButton()
         {
-            var button = driver.FindElement(By.XPath("/html/body/div/div[3]/form/div[2]/div/div[3]/center/input[1]"));
-            button.Click();
+            var input = driver.FindElement(By.XPath("//input[@title='Search']"));
+            input.Submit();
         }
 
         [Then(@"I should see the results page")]
