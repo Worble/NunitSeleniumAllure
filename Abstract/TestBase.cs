@@ -2,13 +2,7 @@ using Allure.Commons;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Edge;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.IE;
 using SeleniumAllure.Helpers;
-using System;
-using System.IO;
 
 namespace Tests.Abstract
 {
@@ -27,7 +21,6 @@ namespace Tests.Abstract
         public void Setup()
         {
             driver = Driver.SetupDriver(driverType);
-            driver.Manage().Window.Maximize();
         }
 
         private void SetupAllureLavel()

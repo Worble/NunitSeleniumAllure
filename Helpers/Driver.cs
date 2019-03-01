@@ -5,9 +5,7 @@ using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace SeleniumAllure.Helpers
 {
@@ -49,6 +47,7 @@ namespace SeleniumAllure.Helpers
                 default:
                     throw new IndexOutOfRangeException("Driver type not recognised");
             }
+            driver.Manage().Window.Maximize();
             return driver;
         }
     }

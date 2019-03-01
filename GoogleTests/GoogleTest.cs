@@ -5,7 +5,7 @@ using OpenQA.Selenium;
 using SeleniumAllure.Helpers;
 using Tests.Abstract;
 
-namespace Tests.GoogleTests
+namespace SeleniumAllure.GoogleTests
 {
     [AllureNUnit]
     [AllureSubSuite("Google Tests")]

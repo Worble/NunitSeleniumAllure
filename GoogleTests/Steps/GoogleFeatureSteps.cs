@@ -1,7 +1,5 @@
 ﻿using OpenQA.Selenium;
 using SeleniumAllure.Abstract;
-using SeleniumAllure.Helpers;
-using System;
 using TechTalk.SpecFlow;
 
 namespace SeleniumAllure
