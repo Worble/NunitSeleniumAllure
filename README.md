@@ -15,6 +15,7 @@ This is a quick little setup for Nunit driving Selenium, with report generation 
 
 Specflow Specific:
 
+* Allure currently does not support the version of Specflow that works with .NET Core, so no Allure reports for this. This may change when Specflow Core support comes out of beta.
 * Install the specflow extension in Visual Studio.
 * See https://specflow.org/2018/specflow-3-public-preview-now-available/ for setting up .NET Core for Specflow
 

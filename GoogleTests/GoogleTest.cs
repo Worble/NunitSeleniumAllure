@@ -11,9 +11,7 @@ namespace SeleniumAllure.GoogleTests
     [AllureSubSuite("Google Tests")]
     public class GoogleTest : TestBase
     {
-        public GoogleTest(DriverEnum driverType) : base(driverType)
-        {
-        }
+        public GoogleTest(DriverEnum driverType) : base(driverType) { }
 
         [Test]
         public void CanNavigateToGoogle()
