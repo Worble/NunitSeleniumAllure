@@ -3,6 +3,7 @@ using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using SeleniumAllure.Helpers;
+using System;
 
 namespace Tests.Abstract
 {
@@ -20,10 +21,32 @@ namespace Tests.Abstract
         [SetUp]
         public void Setup()
         {
+            SetupAllureLabel(driverType);
             driver = Driver.SetupDriver(driverType);
         }
 
-        private void SetupAllureLavel()
+        [TearDown]
+        public void TearDown()
+        {
+            try
+            {
+                if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
+                {
+                    byte[] screenshot = Driver.GetScreenshot(driverType, driver);
+                    AllureLifecycle.Instance.AddAttachment("ScreenShot", "image/png", screenshot, ".png");
+                }
+            }
+            catch (Exception e)
+            {
+                TestContext.Out.WriteLine($"Getting screenshot for failed test failed, reason: {e.Message}");
+            }
+            finally
+            {
+                driver?.Quit();
+            }
+        }
+
+        private static void SetupAllureLabel(DriverEnum driverType)
         {
             switch (driverType)
             {
@@ -43,17 +66,6 @@ namespace Tests.Abstract
                     AllureLifecycle.Instance.UpdateTestCase(e => e.labels.Add(Label.Suite("Internet Explorer")));
                     break;
             }
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
-            {
-                var screenshot = ((ITakesScreenshot)driver).GetScreenshot().AsByteArray;
-                AllureLifecycle.Instance.AddAttachment("ScreenShot", "image/png", screenshot, ".png");
-            }
-            driver?.Quit();
         }
     }
 }
