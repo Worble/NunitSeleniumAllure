@@ -22,6 +22,7 @@ Specflow Specific:
 * Allure currently does not support the version of Specflow that works with .NET Core, so no Allure reports for this. This may change when Specflow Core support comes out of beta.
 * Install the specflow extension in Visual Studio.
 * See https://specflow.org/2018/specflow-3-public-preview-now-available/ for setting up .NET Core for Specflow
+* The table to make Gherkin tests run in each browser is tedious to setup for each feature and there is no workaround in the syntax. This either needs automating some other way or evaluation needed as to whether cross-browser testing in Specflow is at all worth it.
 
 
 
