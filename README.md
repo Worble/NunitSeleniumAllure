@@ -1,4 +1,4 @@
-# Nunit, Selenium and Allure
+# Nunit, Selenium and Allure (And Specflow)
 
 This is a quick little setup for Nunit driving Selenium, with report generation in Allure.
 
