@@ -3,10 +3,10 @@
     public static class TestFixtureDrivers
     {
         private static readonly object[] Drivers = {
-            new object[] { Driver.Chrome },
-            new object[] { Driver.Firefox },
-            new object[] { Driver.Edge },
-            new object[] { Driver.InternetExplorer }
+            new object[] { DriverEnum.Chrome },
+            new object[] { DriverEnum.Firefox },
+            new object[] { DriverEnum.Edge },
+            new object[] { DriverEnum.InternetExplorer }
         };
     }
 }

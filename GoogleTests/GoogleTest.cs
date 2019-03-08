@@ -5,14 +5,13 @@ using OpenQA.Selenium;
 using SeleniumAllure.Helpers;
 using Tests.Abstract;
 
-namespace Tests.GoogleTests
+namespace SeleniumAllure.GoogleTests
 {
     [AllureNUnit]
-    [TestFixtureSource(typeof(TestFixtureDrivers), "Drivers")]
     [AllureSubSuite("Google Tests")]
     public class GoogleTest : TestBase
     {
-        public GoogleTest(Driver driverType) : base(driverType)
+        public GoogleTest(DriverEnum driverType) : base(driverType)
         {
         }
 
